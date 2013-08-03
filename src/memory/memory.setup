@@ -1,0 +1,17 @@
+- PagingDriver
+-> getAddress()
+-> switchDir()
+-> setEntry()
+-> getEntry()
+-> clearEntry()
+
+- MemoryDriver
+-> alloc()
+-> dealloc()
+
+- Memory
+-> alloc
+-> dealloc
+-> change
+-> get
+-> set 

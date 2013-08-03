@@ -1,0 +1,9 @@
+display_library: x
+memory: host=256, guest=256
+romimage: file="$BXSHARE/BIOS-bochs-latest"
+vgaromimage: file="$BXSHARE/VGABIOS-lgpl-latest"
+boot: cdrom
+floppy_bootsig_check: disabled=0
+
+ata0-slave: type=cdrom, path="/home/koen/kernel/bin/kos.iso", status=inserted
+boot: cdrom

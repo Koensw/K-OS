@@ -1,0 +1,20 @@
+- driver: low level thing that handles module request (Mode 13h graphics)
+- module: wrapper around low level drivers (Graphics)
+- library: higher level wrapper around modules (BMPImage)
+- component: handler of specific (non physyical) thing (EventHandler) 
+- map: mostly static information table (KeyboardMap)
+
+core
+- start.asm -> assembly bootup
+- modules
+	- Memory
+	- Graphics
+	- Filesystem
+	- Interrupts
+- drivers
+	- SimpleAllocator
+	- TextGraphics
+	- Mode13HGraphics
+	- KFileSystem
+	
+	
