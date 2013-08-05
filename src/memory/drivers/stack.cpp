@@ -39,7 +39,7 @@ StackDriver::StackDriver(MemoryMap *mmap){
 	while(ptr){ 
 		unsigned int pt = (ptr->base_low+ptr->length_low-PAGE_SIZE) & 0xFFFFF000;
 		
-		for(;pt >= ptr->base_low; pt-=PAGE_SIZE){
+		for(;pt > ptr->base_low+PAGE_SIZE; pt-=PAGE_SIZE){
 			++cnt;
 			unsigned int *tmp = reinterpret_cast<unsigned int*>(pt);
 			*tmp = 0;
@@ -55,6 +55,10 @@ void *StackDriver::alloc(){
 
 void StackDriver::dealloc(void *pt){
 	push(static_cast<unsigned int*>(pt));
+}
+
+unsigned int StackDriver::size(){
+	return cur-bot;
 }
 
 void StackDriver::push(unsigned int *pt){

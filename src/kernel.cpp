@@ -76,12 +76,17 @@ void kinit (int magic, multiboot_info *mbt)
 	
 	//setup memory
 	StackDriver stk(ptr);
-	IdentifyManager mgn;
-	Memory mem(&stk, &mgn);
+	IdentityManager mgn;
+	Memory mem(&stk, &mgn, grph);
 	
-	mem.print(grph);
-	int *ft = static_cast<int*>(mem.alloc(4070));
+	mem.print();
+	int *ft = static_cast<int*>(mem.alloc(4078));
 	grph.write(reinterpret_cast<unsigned int>(ft), 16);
+	grph.write('\n');
+	mem.print();
+	mem.dealloc(ft);
+	mem.print();
+	/*grph.write(reinterpret_cast<unsigned int>(ft), 16);
 	grph.write('\n');
 	mem.print(grph);
 	int *chk = static_cast<int*>(mem.alloc(4060));
@@ -92,7 +97,7 @@ void kinit (int magic, multiboot_info *mbt)
 	mem.dealloc(ft);
 	mem.print(grph);
 	mem.dealloc(chk);
-	mem.print(grph);
+	mem.print(grph);*/
 	
 	grph.write("SUCCESSFULL");
 	return;

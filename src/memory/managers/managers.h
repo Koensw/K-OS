@@ -8,9 +8,9 @@
 #include "../maps/memmap.h"
  
 namespace kos{ 
-	class IdentifyManager: public MemoryManager{
+	class IdentityManager: public MemoryManager{
 	public:
-		IdentifyManager() {}
+		IdentityManager() {}
 		
 		void *virt(void *);
 		void *phys(void *);
@@ -21,6 +21,9 @@ namespace kos{
 		bool change(void *, unsigned int) {
 			return false;
 		}
+		
+		void *search(unsigned int sz, void *ptr);
+		
 		void clear(void *) {}
 		
 		/*void save(void *);

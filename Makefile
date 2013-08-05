@@ -6,11 +6,11 @@ df = $(DEPDIR)/$(*F)
 CXX = cross/bin/i586-elf-g++
 AS = nasm
 
-CXXFLAGS = -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib 
+CXXFLAGS = -ffreestanding -Wall -Wextra -fno-exceptions -fno-rtti -nostdlib 
 
 ASFLAGS = -felf
 
-LDFLAGS = -ffreestanding -O2 -nostdlib -lgcc
+LDFLAGS = -ffreestanding -nostdlib -lgcc
 
 CXXSRCS = $(shell find src -name '*.cpp')
 ASMSRCS = $(shell find src -name '*.s')

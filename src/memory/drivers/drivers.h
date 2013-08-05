@@ -16,6 +16,7 @@ namespace kos{
 		
 		void *alloc();
 		void dealloc(void *);
+		unsigned int size();
 	private:
 		void push(unsigned int *);
 		unsigned int *pop();
