@@ -1,0 +1,10 @@
+{
+  "name": "K-OS"
+, "files": [ { "git": 1 } ]
+, "build": {
+    "directory": ""
+  , "build": "make"
+  , "clean": "make clean"
+  , "install": "make qemu"
+  }
+}
